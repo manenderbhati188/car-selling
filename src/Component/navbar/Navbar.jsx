@@ -9,7 +9,9 @@ const Navbar = () => {
     SetDashboard((prevState) => !prevState);
   };
 
-
+  const openlist=(item)=>{
+    console.log("open list");
+  }
 
   return (
     <div className="flex flex-col">
@@ -63,8 +65,9 @@ const Navbar = () => {
            <div className="dashboard">
             {headernames.map((item, id)=>{
              return(
-              <div className="text-left p-4 font-bold border-2 hover:bg-gray-200">
+              <div className="text-left p-4 font-bold border-2 flex items-center" onClick={()=>openlist()}>
                  <h3 key={id}>{item}</h3>
+                 <i class="fa-sharp fa-solid fa-caret-down drop text-right absolute left-36"></i>
               </div>
              )
                
